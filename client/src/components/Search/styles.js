@@ -22,8 +22,8 @@ export const InputContainer = styled.div`
   }
 
   @media (max-width: 450px) {
-    padding: 40px 1rem 40px 1rem;
-  } ;
+    padding: 110px 1rem 15px 1rem !important;
+  }
 `;
 
 export const Container = styled.div`
@@ -78,5 +78,6 @@ export const InputDiv = styled.div`
   .last-input {
     font-weight: 600;
     cursor: pointer;
+    outline: none;
   }
 `;

@@ -8,8 +8,8 @@ export const FooterContainer = styled.footer`
   position: absolute;
   right: 0;
   left: 0;
-  @media (max-width: 450px) {
-    padding: 1rem;
+  @media (max-width: 499px) {
+    padding: 0;
   }
 `;
 
@@ -30,6 +30,7 @@ export const Container = styled.div`
 
   @media (max-width: 450px) {
     grid-template-columns: 172px 172px;
+    padding: 1rem;
   }
 
   @media (max-width: 320px) {
@@ -46,6 +47,12 @@ export const Ul = styled.ul`
     line-height: 30px;
     color: #002f34;
     font-weight: 600;
+  }
+
+  @media (max-width: 499px) {
+    li {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -93,5 +100,12 @@ export const RightItems = styled.div`
   .store img {
     width: 140px;
     height: 48px;
+  }
+
+  @media (max-width: 499px) {
+    .store img {
+      width: 98px;
+      height: 48px;
+    }
   }
 `;

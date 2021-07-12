@@ -36,8 +36,8 @@ const Login = () => {
         <div
           className={toggleState === 1 ? "content active-content" : "content"}
         >
-          <div class="form-container">
-            <form action="#" class="login-form">
+          <div className="form-container">
+            <form action="#" className="login-form">
               <div className="email">
                 <label for="#">E-mail (din contul OLX)</label>
                 <input type="text" placeholder="E-mail (din contul OLX)" />
@@ -62,7 +62,7 @@ const Login = () => {
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
           <div className="form-container-2">
-            <form action="#" class="login-form">
+            <form action="#" className="login-form">
               <div className="email">
                 <label for="#">E-mail (din contul OLX)</label>
                 <input type="text" placeholder="E-mail (din contul OLX)" />

@@ -1,49 +1,66 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { HeaderContainer, LogoDiv, RightDiv, NavbarDiv } from "./styles";
 import { FaRegComment, FaRegHeart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [show, setShow] = useState(true);
+  const ref = useRef(null);
+  const controlNav = () => {
+    if (window.scrollY > 20) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNav);
+    return () => {
+      window.removeEventListener("scroll", controlNav);
+    };
+  }, []);
+
   return (
-    <HeaderContainer>
+    <HeaderContainer className={`nav ${show ? "" : "none"}`} ref={ref}>
       <NavbarDiv>
         <LogoDiv>
           <h1>
             <Link
               to="/"
               id="headerLogo"
-              class="olx-website-rebranded"
+              className="olx-website-rebranded"
               title="Anunturi pe OLX.ro"
             >
-              <span class="olx-website-rebranded__o"></span>
-              <span class="olx-website-rebranded__l"></span>
-              <span class="olx-website-rebranded__x"></span>
+              <span className="olx-website-rebranded__o"></span>
+              <span className="olx-website-rebranded__l"></span>
+              <span className="olx-website-rebranded__x"></span>
             </Link>
           </h1>
         </LogoDiv>
 
         <RightDiv>
-          <div class="mesaje">
+          <div className="mesaje">
             <Link to="/">
               <FaRegComment />
               <span>Mesaje</span>
             </Link>
           </div>
-          <div class="inima">
+          <div className="inima">
             <Link to="/">
               {" "}
-              <FaRegHeart class="fa-comment" />
+              <FaRegHeart className="fa-comment" />
             </Link>
           </div>
-          <div class="contul-meu">
+          <div className="contul-meu">
             <Link to="/login">
               <FaUser />
               <span>Contul meu</span>
             </Link>
           </div>
           <button>Adauga anunt nou</button>
-          <div class="hamburger-button">
-            <i class="fas fa-bars"></i>
+          <div className="hamburger-button">
+            <i className="fas fa-bars"></i>
           </div>
         </RightDiv>
       </NavbarDiv>

@@ -10,7 +10,7 @@ export const InfoContainer = styled.div`
   max-width: 820px;
   margin: 0 auto;
   text-align: center;
-  padding: 50px 2rem 60px;
+  padding: 20px 2rem 60px;
   p {
     color: #002f34;
     font-size: 14px;

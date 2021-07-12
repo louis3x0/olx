@@ -2,6 +2,14 @@ import styled from "styled-components";
 
 export const ContainerCategories = styled.div`
   padding: 2rem 1rem 5rem;
+
+  @media (max-width: 499px) {
+    padding: 1rem 0 2rem 0;
+    h2 {
+      text-align: center;
+      font-size: 21px !important;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -44,9 +52,13 @@ export const ItemContainer = styled.div`
     margin-left: 2rem;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 499px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: 2rem;
+    margin-left: 3.5rem;
+  }
+
+  @media (max-width: 300px) {
+    margin-left: 1.5rem;
   }
 `;
 

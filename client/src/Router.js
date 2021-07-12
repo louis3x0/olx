@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import Login from "./pages/Login/Login";
+import Products from "./pages/Products/Products";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/products" component={Products} />
       </Switch>
       <Footer />
     </BrowserRouter>

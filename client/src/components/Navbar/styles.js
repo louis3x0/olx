@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
   background: #002f34;
   z-index: 213521521;
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
   top: 0;

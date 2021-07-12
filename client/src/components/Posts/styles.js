@@ -39,7 +39,7 @@ export const Text = styled.div`
   @media (max-width: 450px) {
     h2 {
       font-size: 21px;
-      margin: 1rem 0 3rem;
+      margin: 2.5rem 0 1.5rem;
     }
   }
 `;

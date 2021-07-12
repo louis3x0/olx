@@ -18,10 +18,10 @@ const Search = () => {
           </InputDiv>
           <InputDiv>
             <Input type="text" placeholder="Toata Romania" />
-            <HiOutlineLocationMarker class="fs-27" />
+            <HiOutlineLocationMarker className="fs-27" />
           </InputDiv>
           <InputDiv>
-            <Input placeholder="Cauta acum" class="last-input" />
+            <Input value="Cauta acum" readOnly className="last-input" />
             <FaSearch />
           </InputDiv>
         </Form>
