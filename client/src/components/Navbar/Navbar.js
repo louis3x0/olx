@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { HeaderContainer, LogoDiv, RightDiv, NavbarDiv } from "./styles";
 import { FaRegComment, FaRegHeart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
   const [show, setShow] = useState(true);
@@ -20,6 +21,8 @@ const Navbar = () => {
       window.removeEventListener("scroll", controlNav);
     };
   }, []);
+
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   return (
     <HeaderContainer className={`nav ${show ? "" : "none"}`} ref={ref}>
@@ -53,10 +56,17 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="contul-meu">
-            <Link to="/login">
-              <FaUser />
-              <span>Contul meu</span>
-            </Link>
+            {isAuthenticated ? (
+              <Link to="/dashboard">
+                <FaUser />
+                <span>Contul meu</span>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <FaUser />
+                <span>Contul meu</span>
+              </Link>
+            )}
           </div>
           <button>Adauga anunt nou</button>
           <div className="hamburger-button">

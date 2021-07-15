@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   NavLi,
   Container,
@@ -7,6 +7,7 @@ import {
   LeftSide,
   RightSide,
 } from "./styles";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   return (
@@ -14,13 +15,13 @@ const Products = () => {
       <Container>
         <UList>
           <li>
-            <a href="#">Pagina principală</a>{" "}
+            <Link to="#">Pagina principală</Link>{" "}
           </li>
           <li>
-            <a href="#">Casa si gradina</a>
+            <Link to="#">Casa si gradina</Link>
           </li>
           <li>
-            <a href="#">Scule electrice - Beius</a>
+            <Link to="#">Scule electrice - Beius</Link>
           </li>
         </UList>
         <GridContainer>
@@ -266,7 +267,7 @@ const Products = () => {
 
             <div class="box-right box-right-second">
               <button class="buton-negru">Comanda cu livrare</button>
-              <a href="#">Cum funcționează Livrarea prin OLX?</a>
+              <Link to="#">Cum funcționează Livrarea prin OLX?</Link>
               <div class="cost-estimativ">
                 <i>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">

@@ -208,5 +208,6 @@ export const Ul = styled.ul`
   .active {
     border-bottom: 3px solid #002f34;
     font-weight: 700;
+    transition: 0.5s linear 0s;
   }
 `;

@@ -1,20 +1,31 @@
 const express = require("express");
-const cors = require("cors");
+const mongoose = require("mongoose");
 const path = require("path");
-const { connectDb } = require("./helpers/dbHelper");
-
-const dotenv = require("dotenv");
-dotenv.config();
-connectDb();
+require("dotenv").config();
 
 const app = express();
+// Connect database
+(async function connectDb() {
+  try {
+    await mongoose.connect(process.env.DATABASE_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    });
+    console.log("MongoDB Connected...");
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+})();
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json({ extended: false }));
 
-app.use(cors());
+// Routes
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
 
-app.use("/api", require("./routes"));
+const PORT = 5000;
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => console.log(`Serverul functioneaza pe portul ${PORT}`));
+app.listen(PORT, () => console.log("Server started on port " + PORT));
